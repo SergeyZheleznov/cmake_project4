@@ -104,10 +104,17 @@ TEST_CASE("test List", "[list]")
     list.PushFront(2);
     CHECK(list.Size() == 2);
 
+    list.PushFront(3);
+    list.PushFront(4);
+    list.PushFront(5);
+    list.PopBack();
+    list.PopFront();
+    CHECK(list.Size() == 3);
+
     list.Clear();
+
     CHECK(list.PopBack());
     CHECK(list.PopFront());
-
 }
 
 int main()
